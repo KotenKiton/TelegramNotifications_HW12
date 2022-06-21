@@ -6,6 +6,12 @@ plugins {
 repositories {
     mavenCentral()
 }
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
 
 def allureVersion = '2.18.1',
     selenideVersion = '6.6.3',
@@ -35,10 +41,6 @@ dependencies {
             "org.aeonbits.owner:owner:1.0.12", // Owner библиотека.            "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion"
     )
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
 }
 
 tasks.withType(Test) {
